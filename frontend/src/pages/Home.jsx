@@ -3,13 +3,19 @@ import { useState } from 'react'
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('')
+
   const movies = [
     { id: 1, title: 'Inception', director: 'Christopher Nolan', year: 2010 },
     { id: 2, title: 'The Matrix', director: 'The Wachowskis', year: 1999},
     { id: 3, title: 'Interstellar', director: 'Christopher Nolan', year: 2014 }
   ] 
 
-  const handleSearch = () => {}
+  const handleSearch = (e) => {
+  e.preventDefault()
+  alert(searchQuery)
+  setSearchQuery("")
+
+    }
 
   return (
     <div className="home">
@@ -18,6 +24,7 @@ function Home() {
             placeholder="search for movies..." 
             className="search-input"
             value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button type="submit" className="search-button">Search</button>
         </form>
