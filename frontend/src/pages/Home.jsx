@@ -1,7 +1,8 @@
 import MovieCard from '../components/MovieCard'
+import { useState } from 'react'  
 
 function Home() {
-
+  const [searchQuery, setSearchQuery] = useState('')
   const movies = [
     { id: 1, title: 'Inception', director: 'Christopher Nolan', year: 2010 },
     { id: 2, title: 'The Matrix', director: 'The Wachowskis', year: 1999},
@@ -13,7 +14,11 @@ function Home() {
   return (
     <div className="home">
          <form onSubmit={handleSearch} className="search-form"> 
-            <input type="text" placeholder="search for movies..." className="search-input"/>
+            <input type="text" 
+            placeholder="search for movies..." 
+            className="search-input"
+            value={searchQuery}
+            />
             <button type="submit" className="search-button">Search</button>
         </form>
         <div className="movies-grid">
