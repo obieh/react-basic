@@ -1,19 +1,34 @@
 import MovieCard from "../components/MovieCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { searchMovies, getPopularMovies } from "../services/api.js"; 
 import "../css/Home.css"
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [ movies, setMovies ] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);  
 
-  const movies = [
-    { id: 1, title: "Inception", director: "Christopher Nolan", year: 2010 },
-    { id: 2, title: "The Matrix", director: "The Wachowskis", year: 1999 },
-    
-  ];
+useEffect(() => {
+  const loadPopularMovies = async () => {
+    try {
+      const popularMovies = await getPopularMovies();
+      setMovies(popularMovies);
+    } catch (err) {
+      console.log(err);
+      setError("Failed to load movies....");
+    }
+      finally { 
+        setLoading(false);
+      }
+  }
+  loadPopularMovies();
+}, []);
+
+
 
   const handleSearch = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     alert(searchQuery);
     setSearchQuery("");
   };
