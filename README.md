@@ -27,5 +27,5 @@
 
 ### Props and State in react: In summary, props and state are both important concepts in React. Props are used to pass data from parent to child components, while state is used to manage data that can change over time within a component.
 
-### 
+### A context will allow state to be globally available to anything that is within the provided context.
 
