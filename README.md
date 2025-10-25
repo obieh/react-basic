@@ -25,5 +25,7 @@
 
 ### JSX stands for “JavaScript XML,” and it is a syntax extension to JavaScript based in ES6, the newest “version” of JavaScript. JSX allows you to write HTML in React by converting HTML into React components, helping you to more easily create user interfaces for your web applications.
 
-### Props and State in react: n summary, props and state are both important concepts in React. Props are used to pass data from parent to child components, while state is used to manage data that can change over time within a component.
+### Props and State in react: In summary, props and state are both important concepts in React. Props are used to pass data from parent to child components, while state is used to manage data that can change over time within a component.
+
+### 
 
