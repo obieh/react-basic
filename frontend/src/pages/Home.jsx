@@ -23,7 +23,7 @@ useEffect(() => {
       }
   }
   loadPopularMovies();
-}, []);
+}, []); 
 
 
 
