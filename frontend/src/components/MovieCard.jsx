@@ -5,7 +5,7 @@ function MovieCard({movie}) {
   const { addFavorite, removeFavorite, isFavorite } = useMovieContext(); 
   const favorite = isFavorite(movie.id); 
 
-  function onFavoriteClick() {
+  function onFavoriteClick(e) {
     e.preventDefault();
     if (favorite) {
         removeFavorite(movie.id);
