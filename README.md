@@ -1,4 +1,4 @@
-# Movie search engine
+# Movie Search Engine Web App.
 
 ## This project will search movies using API
 
